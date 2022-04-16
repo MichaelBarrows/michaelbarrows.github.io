@@ -1,4 +1,4 @@
-name: CI/CD
+name: Pages Deployment
 
 on:
   push:
@@ -26,9 +26,6 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-
-    - name: Build
-      run: npm run build
 
     - name: Deploy
       run: |
