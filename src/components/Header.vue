@@ -7,7 +7,7 @@
     <header>
         <div class="grid-container grid">
             <div class="small-12 medium-12 large-6 xlarge-5">
-                <h1><a href="{{ route('index') }}">Michael Barrows</a></h1>
+                <h1><router-link to="/">Michael Barrows</router-link></h1>
             </div>
             <nav class="small medium small-12 medium-12 large-hidden xlarge-hidden grid bars">
                 <router-link to="/" class="small-12 medium-12 hidden">Home</router-link>

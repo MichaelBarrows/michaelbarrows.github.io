@@ -1,0 +1,14 @@
+{
+    "mid" : {
+        "company": "Accu Limited",
+        "title": "PHP Developer",
+        "start": "December 2021",
+        "end": "Present"
+    },
+    "junior" : {
+        "company": "Accu Limited",
+        "title": "Junior PHP Developer",
+        "start": "March 2021",
+        "end": "December 2021"
+    }
+}
