@@ -1,0 +1,50 @@
+{
+    "portfolio": {
+        "id": 1,
+        "name": "Portfolio Website",
+        "pretty_url": "portfolio-website",
+        "short_description": "",
+        "long_description": "",
+        "image": null,
+        "text_logo": "MB",
+        "fa_icon_logo": null,
+        "tech_stack": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7
+        ]
+    },
+    "emotion": {
+        "id": 2,
+        "name": "Emotion Detection (Iranian Propaganda)",
+        "pretty_url": "mres-project-emotion-detection-iranian-propaganda",
+        "short_description": "",
+        "long_description": "",
+        "image": null,
+        "text_logo": null,
+        "fa_icon_logo": "fa-search",
+        "tech_stack": [
+            8,
+            10,
+            9
+        ]
+    },
+    "sentiment": {
+        "id": 3,
+        "name": "Sentiment Analysis (Iranian Propaganda)",
+        "pretty_url": "mres-project-sentiment-analysis-iranian-propaganda",
+        "short_description": "",
+        "long_description": "",
+        "image": null,
+        "text_logo": null,
+        "fa_icon_logo": "fa-search",
+        "tech_stack": [
+            8,
+            10,
+            9
+        ]
+    }
+}

@@ -1,37 +1,36 @@
 <script>
+import Dropdown from "../partials/Dropdown.vue";
     export default {
-        data() {
-            return {
-                employment: fetch('/json/employment.json')
-                    .then(response => response.json())
-                    .then(data => this.employment = data),
-                education: fetch('/json/education.json')
-                    .then(response => response.json())
-                    .then(data => this.education = data)
+    data() {
+        return {
+            employment: fetch("/json/employment.json")
+                .then(response => response.json())
+                .then(data => this.employment = data),
+            education: fetch("/json/education.json")
+                .then(response => response.json())
+                .then(data => this.education = data)
+        };
+    },
+    methods: {
+        dropdown(event) {
+            event.preventDefault();
+            let icon = event.target;
+            let body = event.target.parentElement.parentElement.parentElement.lastElementChild;
+            let header = event.target.parentElement.parentElement;
+            if (icon.classList.contains("fa-chevron-down")) {
+                icon.classList.remove("fa-chevron-down", "closed");
+                icon.classList.add("fa-chevron-up", "open");
+                body.style = "display: block;";
             }
-        },
-        methods: {
-            dropdown(event) {
-                event.preventDefault();
-                let icon = event.target;
-                let body = event.target.parentElement.parentElement.parentElement.lastElementChild;
-                let header = event.target.parentElement.parentElement;
-                if (icon.classList.contains("fa-chevron-down")) {
-                    icon.classList.remove("fa-chevron-down");
-                    icon.classList.add("fa-chevron-up");
-                    header.classList.add("open");
-                    header.classList.remove("closed");
-                    body.style = "display: block;";
-                } else {
-                    icon.classList.remove("fa-chevron-up");
-                    icon.classList.add("fa-chevron-down");
-                    header.classList.add("closed");
-                    header.classList.remove("open");
-                    body.style = "display: none;";
-                }
+            else {
+                icon.classList.remove("fa-chevron-up", "open");
+                icon.classList.add("fa-chevron-down", "closed");
+                body.style = "display: none;";
             }
         }
-    };
+    },
+    components: { Dropdown }
+};
 </script>
 
 <template>
@@ -93,28 +92,28 @@
 
             <div class="all-12 grid">
                 <h3 class="heading all-12">Employment</h3>
-                <div v-for="(job, index) in employment" class="all-12 education">
-                    <div class="header closed">
-                        <h3>{{ job.title }}</h3>
-                        <p>{{ job.company }}</p>
-                        <a href="#" @click="dropdown"><i class="fas fa-chevron-down"></i></a>
-                    </div>
-                    <div class="body">
-                        <p>{{ job.start }} - {{ job.end }}</p>
-                    </div>
+                <div v-for="(job, index) in employment" class="all-12">
+                    <Dropdown :subTitle="job.company">
+                        <template v-slot:title>
+                            <h3>{{ job.title }}</h3>
+                        </template>
+                        <template v-slot:body>
+                            <p slot="body">{{ job.start }} - {{ job.end }}</p>
+                        </template>
+                    </Dropdown>
                 </div>
             </div>
             <div class="all-12 grid">
                 <h3 class="heading all-12">Education</h3>
                 <div v-for="(edu, index) in education" class="all-12 education">
-                    <div class="header closed">
-                        <h3>{{ edu.course }} <span class="small">({{ edu.grade }})</span></h3>
-                        <p>{{ edu.institution }}</p>
-                        <a href="#" @click="dropdown"><i class="fas fa-chevron-down"></i></a>
-                    </div>
-                    <div class="body">
-                        <p>{{ edu.start }} - {{ edu.end }}</p>
-                    </div>
+                    <Dropdown :subTitle="edu.institution">
+                        <template v-slot:title>
+                            <h3>{{ edu.course }} <span class="small">({{ edu.grade }})</span></h3>
+                        </template>
+                        <template v-slot:body>
+                            <p slot="body">{{ edu.start }} - {{ edu.end }}</p>
+                        </template>
+                    </Dropdown>
                 </div>
             </div>
         </div>
