@@ -14,7 +14,7 @@
 
 <template>
     <div class="small-12 medium-6 large-4 xlarge-4 project-card grid"><h3 class="all-12">{{ project.name }}</h3>
-        <img v-if="project.image" class="all-12" src="{{ asset('img/' . $project->image) }}" alt="{{ $project->name }}">
+        <img v-if="project.image" class="all-12" :src="'img/' + project.image" :alt="project.name">
         <div v-if="project.text_logo" class="not-img all-12">
             <div class="text">
                 <p>{{ project.text_logo }}</p>
