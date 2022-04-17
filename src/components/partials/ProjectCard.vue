@@ -33,7 +33,9 @@
             <p v-for="(tech, index) in project.tech_stack">{{ tech.name }}</p>
         </div>
         <div class="link all-12">
-            <p><a :href="'/project/' + project.pretty_url">View Project</a></p>
+            <p>
+                <router-link :to="'/project/' + project.pretty_url">View Project</router-link>
+            </p>
         </div>
     </div>
 </template>
