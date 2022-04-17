@@ -1,33 +1,13 @@
 <script>
 import Dropdown from "../partials/Dropdown.vue";
+import Education from "/public/json/education.json";
+import Employment from "/public/json/employment.json";
     export default {
     data() {
         return {
-            employment: fetch("/json/employment.json")
-                .then(response => response.json())
-                .then(data => this.employment = data),
-            education: fetch("/json/education.json")
-                .then(response => response.json())
-                .then(data => this.education = data)
+            employment: Employment,
+            education: Education
         };
-    },
-    methods: {
-        dropdown(event) {
-            event.preventDefault();
-            let icon = event.target;
-            let body = event.target.parentElement.parentElement.parentElement.lastElementChild;
-            let header = event.target.parentElement.parentElement;
-            if (icon.classList.contains("fa-chevron-down")) {
-                icon.classList.remove("fa-chevron-down", "closed");
-                icon.classList.add("fa-chevron-up", "open");
-                body.style = "display: block;";
-            }
-            else {
-                icon.classList.remove("fa-chevron-up", "open");
-                icon.classList.add("fa-chevron-down", "closed");
-                body.style = "display: none;";
-            }
-        }
     },
     components: { Dropdown }
 };
@@ -98,7 +78,7 @@ import Dropdown from "../partials/Dropdown.vue";
                             <h3>{{ job.title }}</h3>
                         </template>
                         <template v-slot:body>
-                            <p slot="body">{{ job.start }} - {{ job.end }}</p>
+                            <p slot="body">{{ job.start_date }} - {{ job.end_date }}</p>
                         </template>
                     </Dropdown>
                 </div>
@@ -106,12 +86,16 @@ import Dropdown from "../partials/Dropdown.vue";
             <div class="all-12 grid">
                 <h3 class="heading all-12">Education</h3>
                 <div v-for="(edu, index) in education" class="all-12 education">
-                    <Dropdown :subTitle="edu.institution">
+                    <Dropdown :subTitle="edu.institution_name">
                         <template v-slot:title>
-                            <h3>{{ edu.course }} <span class="small">({{ edu.grade }})</span></h3>
+                            <h3>{{ edu.course_name }} <span class="small">({{ edu.grade }})</span></h3>
                         </template>
                         <template v-slot:body>
-                            <p slot="body">{{ edu.start }} - {{ edu.end }}</p>
+                            <div slot="body">
+                                <p>{{ edu.start_date }} - {{ edu.end_date }}</p>
+                                <div v-html="edu.description"></div>
+                            </div>
+
                         </template>
                     </Dropdown>
                 </div>

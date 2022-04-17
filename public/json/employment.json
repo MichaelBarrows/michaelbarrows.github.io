@@ -1,14 +1,17 @@
-{
-    "mid" : {
-        "company": "Accu Limited",
-        "title": "PHP Developer",
-        "start": "December 2021",
-        "end": "Present"
+[
+    {
+        "id":1,
+        "title":"PHP Developer",
+        "company":"Accu Limited",
+        "start_date":"December 2021",
+        "end_date":"Present",
+        "description":""
     },
-    "junior" : {
-        "company": "Accu Limited",
-        "title": "Junior PHP Developer",
-        "start": "March 2021",
-        "end": "December 2021"
+    {
+        "id":2,
+        "title":"Junior PHP Developer",
+        "company":"Accu Limited",
+        "start_date":"March 2021",
+        "end_date":"December 2021"
     }
-}
+]

@@ -41,5 +41,6 @@
 </script>
 
 <template>
+    <a href="#" class="stack-filter active" @click="filter" data-tech-stack="all-active">All Projects</a>
     <a v-for="(t, index) in tech" @click="filter" href="#" class="stack-filter" :data-tech-stack="t.identifier">{{ t.name }}</a>
 </template>

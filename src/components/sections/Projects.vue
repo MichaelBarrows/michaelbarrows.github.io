@@ -1,12 +1,11 @@
 <script>
 import ProjectCard from "../partials/ProjectCard.vue";
 import TechFilters from "../partials/TechFilters.vue";
+import Projects from "/public/json/projects.json";
     export default {
     data() {
         return {
-            projects: fetch("/json/projects.json")
-                .then(response => response.json())
-                .then(data => this.projects = data)
+            projects: Projects
         };
     },
     components: { ProjectCard, TechFilters }
@@ -21,17 +20,12 @@ import TechFilters from "../partials/TechFilters.vue";
             </div>
             <div class="all-12">
                 <p class="tech-filters">
-                    <a href="#" class="stack-filter active" data-tech-stack="all-active">All Projects</a>
-                    <!-- @foreach ($technologies as $technology) -->
                     <TechFilters />
-                    <!-- @endforeach -->
                 </p>
-                    </div>
-                <div class="all-12 grid">
-                    <ProjectCard v-for="(project, index) in projects" :project="project"/>
-                    <!-- @endforeach -->
-                </div>
-            <!-- @endif -->
+            </div>
+            <div class="all-12 grid">
+                <ProjectCard v-for="(project, index) in projects" :project="project"/>
+            </div>
         </div>
     </section>
 </template>
