@@ -7,7 +7,7 @@
     },
     mounted: function () {
         let that = this;
-        fetch("https://mbws.uk/json/projects/" + that.$route.params.pretty_url + ".json")
+        fetch("https://michaelbarrows.com/json/projects/" + that.$route.params.pretty_url + ".json")
                 .then(response => response.json())
                 .then(data => that.project = data)
     }
