@@ -1,8 +1,11 @@
 <script>
+import { RouterLink } from 'vue-router'
     export default {
         props: {
             project: Object
-        }
+        },
+        components: { RouterLink }
+
     };
 </script>
 
@@ -34,7 +37,7 @@
         </div>
         <div class="link all-12">
             <p>
-                <router-link class="rltest" :to="'/project/' + project.pretty_url">View Project</router-link>
+                <RouterLink class="rltest" :to="'/project/' + project.pretty_url">View Project</RouterLink>
             </p>
         </div>
     </div>
