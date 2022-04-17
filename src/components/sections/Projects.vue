@@ -1,7 +1,7 @@
 <script>
 import ProjectCard from "../partials/ProjectCard.vue";
 import TechFilters from "../partials/TechFilters.vue";
-import Projects from "/json/projects.json";
+import Projects from "/public/json/projects.json";
     export default {
     data() {
         return {
