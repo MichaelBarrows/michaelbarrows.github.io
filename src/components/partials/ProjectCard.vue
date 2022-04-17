@@ -34,7 +34,7 @@
         </div>
         <div class="link all-12">
             <p>
-                <router-link :to="'/project/' + project.pretty_url">View Project</router-link>
+                <router-link class="rltest" :to="'/project/' + project.pretty_url">View Project</router-link>
             </p>
         </div>
     </div>
