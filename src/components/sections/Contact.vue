@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-            <form action="#" method="post" id="contact-form" class="contact-form grid all-12">
+            <!-- <form action="#" method="post" id="contact-form" class="contact-form grid all-12">
                 <div class="small-12 medium-12 large-4 xlarge-4">
                     <input type="text" name="name" placeholder="Name" required>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="small-12 medium-6 large-6 xlarge-6">
                     <input type="submit" value="Send Message">
                 </div>
-            </form>
+            </form> -->
         </div>
     </section>
 </template>
