@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "title":"PHP Developer",
+        "title":"Software Engineer",
         "company":"Accu Limited",
         "start_date":"December 2021",
         "end_date":"Present",
@@ -9,6 +9,14 @@
     },
     {
         "id":2,
+        "title":"Director",
+        "company":"GradeCalc Limited",
+        "start_date":"June 2021",
+        "end_date":"Present",
+        "description":""
+    },
+    {
+        "id":3,
         "title":"Junior PHP Developer",
         "company":"Accu Limited",
         "start_date":"March 2021",
