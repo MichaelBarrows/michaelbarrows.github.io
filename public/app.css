@@ -832,6 +832,36 @@ section#about .education .body ul li:before {
   color: #09C;
   margin-right: 5px;
 }
+.card {
+    position: relative;
+    background-color: #0099CC;
+    opacity: 0.75;
+    align-self: stretch;
+    border-radius: 5px;
+    margin: 2.5px;
+    color: #333333;
+}
+.card .flag-container {
+    position: absolute;
+    top: -5.5px;
+    right: -5.5px;
+    border-radius: 5px;
+    background-color: #22c55e;
+}
+.card .flag-container .flag {
+    padding: 10px;
+    line-height: 25px;
+    color: #333333;
+    font-weight: bold;
+}
+.card h3, .card h4, .card p {
+    margin: 10px;
+    font-size: 1.1em;
+}
+.card h4 {
+    color: #CCCCCC;
+}
+
 
 @media only screen and (max-width: 700px) {
   section#about img.mb {

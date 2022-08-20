@@ -2,15 +2,16 @@
 import Dropdown from "../partials/Dropdown.vue";
 import Education from "/public/json/education.json";
 import Employment from "/public/json/employment.json";
+import EmploymentCard from "../partials/EmploymentCard.vue";
     export default {
-    data() {
-        return {
-            employment: Employment,
-            education: Education
-        };
-    },
-    components: { Dropdown }
-};
+        data() {
+            return {
+                employment: Employment,
+                education: Education
+            };
+        },
+        components: { Dropdown, EmploymentCard }
+    };
 </script>
 
 <template>
@@ -72,16 +73,8 @@ import Employment from "/public/json/employment.json";
 
             <div class="all-12 grid">
                 <h3 class="heading all-12">Employment</h3>
-                <div v-for="(job, index) in employment" class="all-12">
-                    <Dropdown :subTitle="job.company">
-                        <template v-slot:title>
-                            <h3>{{ job.title }}</h3>
-                        </template>
-                        <template v-slot:body>
-                            <p slot="body">{{ job.start_date }} - {{ job.end_date }}</p>
-                        </template>
-                    </Dropdown>
-                </div>
+
+                <EmploymentCard v-for="(job, index) in employment" :job="job"></EmploymentCard>
             </div>
             <div class="all-12 grid">
                 <h3 class="heading all-12">Education</h3>
