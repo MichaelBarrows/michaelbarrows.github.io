@@ -38,8 +38,10 @@
                             <p><i class="fas fa-code"></i></p>
                         </div>
                     </div>
-                    <div v-for="(tech, index) in project.tech_stack" class="all-12 tech-stack">
-                        <p>{{ tech.name }}</p>
+                    <div class="all-12 tech-stack">
+                        <p v-for="(tech, index) in project.tech_stack">
+                            {{ tech.name }}
+                        </p>
                     </div>
 
                     <!-- @if ($project->projectImages->count() != 0) -->

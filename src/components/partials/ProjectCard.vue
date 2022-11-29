@@ -33,7 +33,7 @@ import { RouterLink } from 'vue-router'
             <p>+{{ project.tech_stack.length - 5 }}</p>
         </div>
         <div class="all-12 tech-stack" v-else>
-            <p v-for="(tech, index) in project.tech_stack">{{ tech.name }}</p>
+            <p class="px-2" v-for="(tech, index) in project.tech_stack">{{ tech.name }}</p>
         </div>
         <div class="link all-12">
             <p>
