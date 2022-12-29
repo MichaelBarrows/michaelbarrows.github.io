@@ -42,10 +42,10 @@ import axios from 'axios';
                     <img class="mb" src="/img/michaelbarrows.jpeg" alt="Picture of me">
                 </div>
                 <div class="small-12 medium-12 large-9 xlarge-9 semi-transparent-light-grey about-text slight-rounding">
-                    <p>I'm Michael, a web developer (back-end/full-stack) in Colchester with 4 years of experience specifically in web design and development.</p>
+                    <p>I'm Michael, a web developer (back-end/full-stack) in Colchester with 4 years of experience (2 years commercially) specifically in web design and development.</p>
                     <p>I've recently completed a research master's at the University of Portsmouth in which I explored automated labelling and machine learning for sentiment and emotion. Before that, I studied a master of computing degree at Edge Hill University in web design and development.</p>
                     <p>Within the web development field, my interests are mainly in back-end development (PHP, Laravel, SQL).</p>
-                    <p>I am currently looking for a back-end or full-stack developer role in Colchester, Ipswich, Chelmsford, London or remote. I am also open to freelance projects.</p>
+                    <p>I am currently looking for a remote back-end or full-stack developer role.</p>
                     <p>Want to know more? <a href="#contact">Get in touch</a>.</p>
                 </div>
             </div>
@@ -69,6 +69,8 @@ import axios from 'axios';
                 <p>CSS3</p>
                 <p>Sass</p>
                 <p>JavaScript</p>
+                <p>Vue</p>
+                <p>React</p>
                 <p>JQuery</p>
                 <p>Using API's</p>
                 <p>Bootstrap</p>
