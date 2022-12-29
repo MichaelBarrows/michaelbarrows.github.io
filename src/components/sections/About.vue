@@ -1,14 +1,31 @@
 <script>
 import Dropdown from "../partials/Dropdown.vue";
-import Education from "/public/json/education.json";
-import Employment from "/public/json/employment.json";
 import EmploymentCard from "../partials/EmploymentCard.vue";
+import axios from 'axios';
     export default {
         data() {
             return {
-                employment: Employment,
-                education: Education
+                employment: [],
+                education: []
             };
+        },
+        async mounted () {
+            this.getEducation()
+            this.getEmployment()
+        },
+        methods: {
+            getEducation: async function () {
+                return await axios.get('https://api.michaelbarrows.com/api/education/all')
+                    .then((response) => {
+                        this.education = response.data
+                    })
+            },
+            getEmployment: async function () {
+                return await axios.get('https://api.michaelbarrows.com/api/employment/all')
+                    .then((response) => {
+                        this.employment = response.data
+                    })
+            },
         },
         components: { Dropdown, EmploymentCard }
     };

@@ -1,16 +1,22 @@
 <script>
-    export default {
+import axios from 'axios';
+export default {
     data() {
         return {
             project: []
         };
     },
-    mounted: function () {
-        let that = this;
-        fetch("https://michaelbarrows.com/json/projects/" + that.$route.params.pretty_url + ".json")
-                .then(response => response.json())
-                .then(data => that.project = data)
-    }
+    async mounted () {
+        this.getProject()
+    },
+    methods: {
+        getProject: async function () {
+            return await axios.get('https://api.michaelbarrows.com/api/project/' + this.$route.params.pretty_url)
+                .then((response) => {
+                    this.project = response.data
+                })
+        }
+    },
 };
 </script>
 

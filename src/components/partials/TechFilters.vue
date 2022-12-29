@@ -1,10 +1,13 @@
 <script>
-    import Tech from '/public/json/techstacks.json';
+import axios from 'axios';
     export default {
         data() {
             return {
-                tech: Tech
+                tech: []
             }
+        },
+        async mounted () {
+            this.getTech()
         },
         methods: {
             filter(event) {
@@ -35,6 +38,12 @@
                         }
                     }
                 }
+            },
+            getTech: async function () {
+                return await axios.get('https://api.michaelbarrows.com/api/tech-stack')
+                    .then((response) => {
+                        this.tech = response.data
+                    })
             }
         }
     };

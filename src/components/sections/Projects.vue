@@ -1,12 +1,23 @@
 <script>
 import ProjectCard from "../partials/ProjectCard.vue";
 import TechFilters from "../partials/TechFilters.vue";
-import Projects from "/public/json/projects.json";
+import axios from 'axios';
     export default {
     data() {
         return {
-            projects: Projects
+            projects: []
         };
+    },
+    async mounted () {
+        this.getProjects()
+    },
+    methods: {
+        getProjects: async function () {
+            return await axios.get('https://api.michaelbarrows.com/api/project/all')
+                .then((response) => {
+                    this.projects = response.data
+                })
+        }
     },
     components: { ProjectCard, TechFilters }
 };
