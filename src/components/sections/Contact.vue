@@ -17,23 +17,26 @@ export default {
     methods: {
         submitForm () {
             this.error = false
-            this.success = true
+            this.success = false
 
-            return axios.post(getApiUrl() + '/api/contact', {
+            axios.post(getApiUrl() + '/api/contact', {
                 name: this.form.name,
                 email: this.form.email,
                 phone: this.form.phone,
                 message: this.form.message,
             })
             .then((response) => {
-                if (response && response.status == 201 && response.data.success) {
+                if (response && response.status == 201 ) {
                     this.resetForm()
                     this.success = true
+                    this.error = false
                 } else {
                     this.error = true
+                    this.success = false
                 }
             }).catch((response) => {
                 this.error = true
+                this.success = false
             })
         },
 
