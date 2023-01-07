@@ -46,25 +46,15 @@ export default {
                         </div>
                     </div>
                     <div class="all-12 tech-stack">
-                        <p v-for="(tech, index) in project.tech_stack">
+                        <p v-for="(tech, index) in project.tech_stack" :key="index">
                             {{ tech.name }}
                         </p>
                     </div>
-
-                    <!-- @if ($project->projectImages->count() != 0) -->
-                    <!-- <a class="all-12" href="/images/{{ $project->projectImages[0]->id }}">View Images ({{ $project->projectImages->count() }}) <i class="fas fa-image"></i></a> -->
-                    <!-- @endif -->
-                    <!-- @if ($project->projectLinks->count() != 0) -->
-                    <!-- @foreach ($project->projectLinks as $link) -->
-                    <!-- <a class="all-12" href="{{ $link->link }}" target="_blank">{{ $link->text }} <i class="{{ $link->icon }}"></i></a> -->
-                    <!-- @endforeach -->
-                    <!-- @endif -->
                 </div>
                 <div class="small-12 medium-12 large-9 xlarge-9 semi-transparent-light-grey slight-rounding grid text" v-html="project.content">
                 </div>
 
             </div>
-            <!-- @endif -->
         </div>
     </section>
 </template>

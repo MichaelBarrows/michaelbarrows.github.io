@@ -29,11 +29,22 @@ import { RouterLink } from 'vue-router'
         </div>
         <p v-if="project.short_description" class="short-description all-12">{{ project.short_description }}</p>
         <div class="all-12 tech-stack" v-if="project.tech_stack.length > 5">
-            <p v-for="(tech, index) in project.tech_stack.slice(0,5)">{{ tech.name }}</p>
+            <p
+                v-for="(tech, index) in project.tech_stack.slice(0,5)"
+                :key="index"
+            >
+                {{ tech.name }}
+            </p>
             <p>+{{ project.tech_stack.length - 5 }}</p>
         </div>
         <div class="all-12 tech-stack" v-else>
-            <p class="px-2" v-for="(tech, index) in project.tech_stack">{{ tech.name }}</p>
+            <p
+                class="px-2"
+                v-for="(tech, index) in project.tech_stack"
+                :key="index"
+            >
+                {{ tech.name }}
+            </p>
         </div>
         <div class="link all-12">
             <p>

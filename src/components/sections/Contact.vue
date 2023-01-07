@@ -9,14 +9,16 @@ export default {
                 email: '',
                 phone: '',
                 message: '',
-            }
+            },
+            success: false,
+            error: false,
         };
-    },
-    async mounted () {
-        //
     },
     methods: {
         submitForm () {
+            this.error = false
+            this.success = true
+
             return axios.post(getApiUrl() + '/api/contact', {
                 name: this.form.name,
                 email: this.form.email,
@@ -24,8 +26,24 @@ export default {
                 message: this.form.message,
             })
             .then((response) => {
-                console.log(response)
+                if (response && response.status == 201 && response.data.success) {
+                    this.resetForm()
+                    this.success = true
+                } else {
+                    this.error = true
+                }
+            }).catch((response) => {
+                this.error = true
             })
+        },
+
+        resetForm () {
+            this.form = {
+                name: '',
+                email: '',
+                phone: '',
+                message: '',
+            }
         }
     },
 };
@@ -44,7 +62,15 @@ export default {
                 </div>
             </div>
 
-            <form @submit.prevent="submitForm" id="contact-form" class="contact-form grid all-12">
+            <div v-if="success" class="all-12 flash-message success">
+                <p class="success">Message Sent Successfully.</p>
+            </div>
+
+            <div v-if="error" class="all-12 flash-message error">
+                <p class="error">There was an error while sending your message. Please try again.</p>
+            </div>
+
+            <form v-if="! success" @submit.prevent="submitForm" id="contact-form" class="contact-form grid all-12">
                 <div class="small-12 medium-12 large-4 xlarge-4">
                     <input type="text" name="name" placeholder="Name" v-model="form.name" required>
                 </div>

@@ -36,7 +36,7 @@ import { getApiUrl } from "@/config/apiUrl";
                 </p>
             </div>
             <div class="all-12 grid">
-                <ProjectCard v-for="(project, index) in projects" :project="project"/>
+                <ProjectCard v-for="(project, index) in projects" :project="project" :key="index"/>
             </div>
         </div>
     </section>

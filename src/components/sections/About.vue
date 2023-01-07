@@ -94,17 +94,17 @@ import { getApiUrl } from "@/config/apiUrl";
             <div class="all-12 grid">
                 <h3 class="heading all-12">Employment</h3>
 
-                <EmploymentCard v-for="(job, index) in employment" :job="job"></EmploymentCard>
+                <EmploymentCard v-for="(job, index) in employment" :job="job" :key="index"></EmploymentCard>
             </div>
             <div class="all-12 grid">
                 <h3 class="heading all-12">Education</h3>
-                <div v-for="(edu, index) in education" class="all-12 education">
+                <div v-for="(edu, index) in education" class="all-12 education" :key="index">
                     <Dropdown :subTitle="edu.institution_name">
                         <template v-slot:title>
                             <h3>{{ edu.course_name }} <span class="small">({{ edu.grade }})</span></h3>
                         </template>
                         <template v-slot:body>
-                            <div slot="body">
+                            <div>
                                 <p>{{ edu.start_date }} - {{ edu.end_date }}</p>
                                 <div v-html="edu.description"></div>
                             </div>

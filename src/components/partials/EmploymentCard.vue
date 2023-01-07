@@ -17,7 +17,7 @@ import Card from './Card.vue';
     <Card :title="job.title" :subTitle="job.company">
         <template v-slot:content>
             <p class="align-center">{{ job.start_date }} - {{ job.end_date }}</p>
-            <span class="tag" v-for="tag in job.tags">{{ tag }}</span>
+            <span class="tag" v-for="tag in job.tags" :key="tag">{{ tag }}</span>
         </template>
         <template v-if="job.end_date == 'Present'" v-slot:flag>
             <div class="flag-container">
