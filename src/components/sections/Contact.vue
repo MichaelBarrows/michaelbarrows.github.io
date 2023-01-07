@@ -1,3 +1,36 @@
+<script>
+import axios from 'axios';
+import { getApiUrl } from '@/config/apiUrl';
+export default {
+    data() {
+        return {
+            form: {
+                name: '',
+                email: '',
+                phone: '',
+                message: '',
+            }
+        };
+    },
+    async mounted () {
+        //
+    },
+    methods: {
+        submitForm () {
+            return axios.post(getApiUrl() + '/api/contact', {
+                name: this.form.name,
+                email: this.form.email,
+                phone: this.form.phone,
+                message: this.form.message,
+            })
+            .then((response) => {
+                console.log(response)
+            })
+        }
+    },
+};
+</script>
+
 <template>
     <section id="contact">
         <div class="grid-container grid">
@@ -11,18 +44,18 @@
                 </div>
             </div>
 
-            <!-- <form action="#" method="post" id="contact-form" class="contact-form grid all-12">
+            <form @submit.prevent="submitForm" id="contact-form" class="contact-form grid all-12">
                 <div class="small-12 medium-12 large-4 xlarge-4">
-                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="text" name="name" placeholder="Name" v-model="form.name" required>
                 </div>
                 <div class="small-12 medium-12 large-4 xlarge-4">
-                    <input type="email" name="email_address" placeholder="E-Mail Address" required>
+                    <input type="email" name="email" placeholder="E-Mail Address" v-model="form.email" required>
                 </div>
                 <div class="small-12 medium-12 large-4 xlarge-4">
-                    <input type="text" name="phone_number" placeholder="Phone Number" required>
+                    <input type="text" name="phone" placeholder="Phone Number" v-model="form.phone" required>
                 </div>
                 <div class="small-12 medium-12 large-12 xlarge-12">
-                    <textarea name="message" placeholder="Your Message" class="message" rows="10" required></textarea>
+                    <textarea name="message" placeholder="Your Message" class="message" rows="10" v-model="form.message" required></textarea>
                 </div>
                 <div class="small-12 medium-6 large-6 xlarge-6">
                     <input type="reset" value="Reset Form">
@@ -30,7 +63,7 @@
                 <div class="small-12 medium-6 large-6 xlarge-6">
                     <input type="submit" value="Send Message">
                 </div>
-            </form> -->
+            </form>
         </div>
     </section>
 </template>

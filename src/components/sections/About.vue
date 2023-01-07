@@ -2,6 +2,7 @@
 import Dropdown from "../partials/Dropdown.vue";
 import EmploymentCard from "../partials/EmploymentCard.vue";
 import axios from 'axios';
+import { getApiUrl } from "@/config/apiUrl";
     export default {
         data() {
             return {
@@ -15,13 +16,13 @@ import axios from 'axios';
         },
         methods: {
             getEducation: async function () {
-                return await axios.get('https://api.michaelbarrows.com/api/education/all')
+                return await axios.get(getApiUrl() + '/api/education/all')
                     .then((response) => {
                         this.education = response.data
                     })
             },
             getEmployment: async function () {
-                return await axios.get('https://api.michaelbarrows.com/api/employment/all')
+                return await axios.get(getApiUrl() + '/api/employment/all')
                     .then((response) => {
                         this.employment = response.data
                     })

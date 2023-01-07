@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import { getApiUrl } from '@/config/apiUrl';
 export default {
     data() {
         return {
@@ -11,7 +12,7 @@ export default {
     },
     methods: {
         getProject: async function () {
-            return await axios.get('https://api.michaelbarrows.com/api/project/' + this.$route.params.pretty_url)
+            return await axios.get(getApiUrl() + '/api/project/' + this.$route.params.pretty_url)
                 .then((response) => {
                     this.project = response.data
                 })

@@ -2,6 +2,7 @@
 import ProjectCard from "../partials/ProjectCard.vue";
 import TechFilters from "../partials/TechFilters.vue";
 import axios from 'axios';
+import { getApiUrl } from "@/config/apiUrl";
     export default {
     data() {
         return {
@@ -13,7 +14,7 @@ import axios from 'axios';
     },
     methods: {
         getProjects: async function () {
-            return await axios.get('https://api.michaelbarrows.com/api/project/all')
+            return await axios.get(getApiUrl() + '/api/project/all')
                 .then((response) => {
                     this.projects = response.data
                 })

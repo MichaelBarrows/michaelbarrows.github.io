@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import { getApiUrl } from '@/config/apiUrl';
     export default {
         data() {
             return {
@@ -40,7 +41,7 @@ import axios from 'axios';
                 }
             },
             getTech: async function () {
-                return await axios.get('https://api.michaelbarrows.com/api/tech-stack')
+                return await axios.get(getApiUrl() + '/api/tech-stack')
                     .then((response) => {
                         this.tech = response.data
                     })
