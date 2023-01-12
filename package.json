@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "^1.2.2",
-    "esbuild": "^0.16.12",
+    "esbuild": "^0.16.17",
     "vue": "^3.2.31",
     "vue-gtag": "^2.0.1",
     "vue-router": "^4.0.12"
