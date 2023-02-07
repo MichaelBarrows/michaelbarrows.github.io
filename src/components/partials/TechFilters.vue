@@ -43,7 +43,7 @@ import { getApiUrl } from '@/config/apiUrl';
             getTech: async function () {
                 return await axios.get(getApiUrl() + '/api/tech-stack')
                     .then((response) => {
-                        this.tech = response.data
+                        this.tech = response.data.data
                     })
             }
         }

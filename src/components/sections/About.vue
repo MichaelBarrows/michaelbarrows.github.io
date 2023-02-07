@@ -18,13 +18,13 @@ import { getApiUrl } from "@/config/apiUrl";
             getEducation: async function () {
                 return await axios.get(getApiUrl() + '/api/education/all')
                     .then((response) => {
-                        this.education = response.data
+                        this.education = response.data.data
                     })
             },
             getEmployment: async function () {
                 return await axios.get(getApiUrl() + '/api/employment/all')
                     .then((response) => {
-                        this.employment = response.data
+                        this.employment = response.data.data
                     })
             },
         },

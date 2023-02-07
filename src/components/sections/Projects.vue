@@ -16,7 +16,7 @@ import { getApiUrl } from "@/config/apiUrl";
         getProjects: async function () {
             return await axios.get(getApiUrl() + '/api/project/all')
                 .then((response) => {
-                    this.projects = response.data
+                    this.projects = response.data.data
                 })
         }
     },
