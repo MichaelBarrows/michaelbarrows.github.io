@@ -1,6 +1,5 @@
 {
   "name": "portfolio-vue",
-  "version": "1.2.2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
