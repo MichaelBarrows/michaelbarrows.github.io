@@ -194,7 +194,6 @@ export default {
     </div>
 
     <!-- About me -->
-    <!-- Turn these into bullet points -->
     <div class="max-w-[95%] md:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 pb-8">
       <h2 class="text-3xl text-gradient text-center md:col-span-3 font-semibold">About Me</h2>
       <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4 pb-5">
@@ -225,12 +224,6 @@ export default {
           <p class="md:text-lg">Always trying to learn something new</p>
         </div>
       </div>
-        <!-- <p class="my-2">I'm Michael, a web developer (back-end/full-stack) in Colchester with 4 years of experience (2 years commercially) specifically in web design and development.</p>
-        <p class="my-2">I've recently completed a research master's at the University of Portsmouth in which I explored automated labelling and machine learning for sentiment and emotion. Before that, I studied a master of computing degree at Edge Hill University in web design and development.</p>
-        <p class="my-2">Within the web development field, my interests are mainly in back-end development (PHP, Laravel, SQL).</p>
-        <p class="my-2">I am currently looking for a remote back-end or full-stack developer role.</p>
-        <p class="my-2">Want to know more? Get in touch.</p>
-       -->
 
       <!-- My skills -->
       <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg p-2 text-center">
@@ -298,7 +291,7 @@ export default {
       :item="currentlySelectedTimelineItem"
     />
 
-    <div class="max-w-[95%] md:max-w-7xl mb-5 mx-auto grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-5" id="projects">
+    <div class="max-w-[95%] md:max-w-7xl mx-auto mb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-5" id="projects">
       <h2 class="md:col-span-2 lg:col-span-3 text-3xl text-gradient text-center font-semibold">Projects</h2>
       <Card
         v-for="project in projects" :key="'proj' + project.id"
