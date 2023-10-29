@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <div class="p-2 gradient p-4 rounded-md text-white" @click.prevent="handleClick()">
+  <div class="p-2 gradient p-4 rounded-md text-white shadow-lg" @click.prevent="handleClick()">
     <div class="grid md:grid-cols-4">
       <div class="aspect-square w-[25%] md:w-full mx-auto text-center border border-white rounded-md">
         <div class="relative top-[50%] -translate-y-2/4">

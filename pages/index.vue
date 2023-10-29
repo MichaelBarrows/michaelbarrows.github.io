@@ -31,6 +31,7 @@ export default {
         duration: {}
       },
       currentlySelectedProject: {},
+      openToOpportunities: false,
     }
   },
   computed: {
@@ -219,10 +220,12 @@ export default {
 
           <div class="lg:col-span-3 md:pb-2">
             <p class="text-center text-xl text-pacific-blue-700 pb-2 font-semibold">Exploring opportunities</p>
-            <div class="text-center bg-gray-100 rounded-md shadow-md p-2 pt-4">
-              <!-- <FontAwesomeIcon class="text-3xl rounded-full py-3 px-3 m-2 bg-gradient-to-br from-emerald-400 to-emerald-800 text-white" :icon="['fas', 'circle-check']" />
-              <p class="text-emerald-500 text-lg pt-0 font-semibold">Yes, get in touch</p> -->
+            <div v-if="openToOpportunities" class="text-center bg-gray-100 rounded-md shadow-md p-2 pt-4">
+              <FontAwesomeIcon class="text-3xl rounded-full py-3 px-3 m-2 bg-gradient-to-br from-emerald-400 to-emerald-800 text-white" :icon="['fas', 'circle-check']" />
+              <p class="text-emerald-500 text-lg pt-0 font-semibold">Yes, get in touch</p>
+            </div>
 
+            <div v-else class="text-center bg-gray-100 rounded-md shadow-md p-2 pt-4">
               <FontAwesomeIcon class="text-3xl rounded-full py-3 px-3 m-2 bg-gradient-to-br from-red-400 to-red-800 text-white" :icon="['fas', 'circle-xmark']" />
               <p class="text-red-500 text-lg pt-0 font-semibold">Not at the moment</p>
             </div>
@@ -240,29 +243,29 @@ export default {
     <div class="max-w-[95%] md:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 pb-8">
       <h2 id="about" class="text-3xl text-gradient text-center md:col-span-3 font-semibold">About Me</h2>
       <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4 pb-5">
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'mortar-board']" />
           <p class="md:text-lg">4 years of Web Development specific education</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'building']" />
           <p class="md:text-lg">2 years of commercial experience</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'code']" />
           <p class="md:text-lg">Full-stack, with a back-end focus</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fab', 'php']" />
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fab', 'laravel']" />
           <p class="md:text-lg">Playing with PHP since 2013, Laravel since 2017</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'mortar-board']" />
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'comments']" />
           <p class="md:text-lg">Published research around machine learning and natural language processing</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'book']" />
           <p class="md:text-lg">Always trying to learn something new</p>
         </div>
