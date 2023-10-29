@@ -21,7 +21,7 @@ export default {
 <template>
   <BaseModal :title="project.title" :show="displayModal" :close="closeModal" width="md:max-w-5xl">
     <div @submit.prevent="submit" class="p-5 text-left grid md:grid-cols-3">
-      <div class="border-r border-pacific-blue-600">
+      <div class="border-b mb-2 md:mb-0 md:border-r md:border-b-0 border-pacific-blue-600">
         <div class="aspect-square w-[50%] mx-auto text-center border border-white rounded-md gradient">
           <div class="relative top-[50%] -translate-y-2/4">
             <FontAwesomeIcon class="text-6xl text-white" :icon="['fas', project.icon ?? 'code']" />
@@ -34,8 +34,8 @@ export default {
           </span>
         </div>
         <!-- links -->
-        <div v-for="link in project.links" :key="link.id">
-          <a v-bind:href="link.link" target="_blank" class="text-pacific-blue-600 gradient p-1 block my-2 mr-4">
+        <div v-for="link in project.links" :key="link.id" class="md:mr-4">
+          <a v-bind:href="link.link" target="_blank" class="w-full text-pacific-blue-600 gradient p-1 block my-4">
             <span class="bg-white block text-md font-semibold p-2 text-center relative">
               <span class="text-center">{{ link.text }}</span>
               <FontAwesomeIcon class="text-xl text-pacific-blue-600 absolute left-2 top-[50%] -translate-y-2/4" :icon="link.icon" />

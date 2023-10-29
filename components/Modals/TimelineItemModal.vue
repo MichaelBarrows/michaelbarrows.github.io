@@ -35,7 +35,7 @@ export default {
 <template>
   <BaseModal :title="item.title + ' @ ' +  item.company" :show="displayModal" :close="closeModal" width="md:max-w-5xl">
     <div @submit.prevent="submit" class="p-5 text-left grid md:grid-cols-3">
-      <div class="border-r border-pacific-blue-600">
+      <div class="border-b mb-2 md:mb-0 md:border-r md:border-b-0 border-pacific-blue-600">
         <h1 class="text-3xl text-gradient pb-2">{{ item.title }}</h1>
         <h2 class="text-2xl text-gradient pb-2">{{ item.company }}</h2>
         <p class="pb-2">{{ item.start_date }} - {{ item.end_date }}</p>
