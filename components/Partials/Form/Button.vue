@@ -26,6 +26,6 @@ export default {
     :type="type"
     :name="name"
     :placeholder="value"
-    :styles="(type === 'submit' ? 'bg-emerald-500 border-emerald-600 text-white py-2' : 'bg-red-500 border-red-700 text-white py-2') + ' font-semibold'"
+    :styles="(type === 'submit' ? 'bg-emerald-500 border-emerald-600 text-white py-2' : 'bg-red-500 border-red-700 text-white py-2') + ' font-semibold ' + styles"
   />
 </template>

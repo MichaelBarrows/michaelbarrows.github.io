@@ -24,23 +24,6 @@ export default {
 
 <template>
   <div class="h-full">
-    <!-- <div class="gradient py-3">
-      <div class="max-w-[95%] md:max-w-8xl mx-auto md:block w-full md:w-auto md:flex-grow md:flex md:items-center">
-        <h1 class="text-center md:text-left md:pr-10 text-2xl md:text-xl text-white font-medium">Michael Barrows</h1>
-        <ul class="hidden md:flex flex-col md:-mx-4 md:flex-row md:items-center md:ml-auto">
-          <Link url="#">Home</Link>
-          <Link url="#">About</Link>
-          <Link url="#projects">Projects</Link>
-          <Link url="#">Contact Me</Link>
-          <Link url="https://github.com/michaelbarrows" :target="() => '_blank'">
-            <FontAwesomeIcon class="text-xl" :icon="['fab', 'github']" />
-          </Link>
-          <Link url="https://linkedin.com/in/michaelpbarrows" :target="() => '_blank'">
-            <FontAwesomeIcon class="text-xl" :icon="['fab', 'linkedin']" />
-          </Link>
-        </ul>
-      </div>
-    </div> -->
     <Nuxt />
     <div class="gradient py-3 px-5">
       <div class="max-w-[95%] md:max-w-7xl mx-auto md:block w-full md:w-auto md:flex-grow md:flex md:items-center">
