@@ -74,9 +74,7 @@ export default {
   <div>
     <div class="md:min-h-[100vh] md:flex md:items-center md:place-content-center">
       <div>
-        <h1 class="max-w-[95%] md:max-w-8xl text-center text-4xl md:text-6xl font-semibold text-gradient mt-16 md:mt-5 mb-4 mx-auto">Michael Barrows</h1>
-        <h2 class="max-w-[95%] md:max-w-8xl text-center text-3xl md:text-4xl font-semibold text-gradient mt-4 mb-4 mx-auto">Software Engineer</h2>
-        <h3 class="max-w-[95%] md:max-w-8xl text-center text-2xl md:text-2xl font-semibold text-gradient mt-4 mb-16 2xl:mb-40 mx-auto">Colchester, Essex</h3>
+        <h1 class="max-w-[95%] md:max-w-8xl text-center text-4xl md:text-6xl font-semibold text-gradient mt-16 md:mt-5 mb-16 mx-auto">Hi, I'm Michael, a Software Engineer <br />in Colchester, Essex!</h1>
 
         <div class="max-w-[95%] md:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-5 pb-10 md:pb-16 2xl:pb-32">
           <div class="md:col-span-4 md:pb-2">
