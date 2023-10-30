@@ -31,6 +31,7 @@ export default {
         duration: {}
       },
       currentlySelectedProject: {},
+      openToOpportunities: false,
     }
   },
   computed: {
@@ -70,16 +71,54 @@ export default {
 }
 </script>
 
+<style>
+@keyframes chevron_bounce {
+  0% {
+    bottom: 5vh;
+  }
+  40% {
+    bottom: 5vh;
+  }
+  60% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 5vh;
+  }
+}
+@-webkit-keyframes chevron_bounce {
+  0% {
+    bottom: 5vh;
+  }
+  40% {
+    bottom: 5vh;
+  }
+  60% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 5vh;
+  }
+}
+.chevron a {
+  bottom: 5vh;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  -webkit-animation: chevron_bounce 2s infinite;
+  animation: chevron_bounce 2s infinite;
+  transition: color 500ms;
+}
+</style>
+
 <template>
   <div>
     <div class="md:min-h-[100vh] md:flex md:items-center md:place-content-center">
       <div>
-        <h1 class="max-w-[95%] md:max-w-8xl text-center text-4xl md:text-6xl font-semibold text-gradient mt-16 md:mt-5 mb-4 mx-auto">Michael Barrows</h1>
-        <h2 class="max-w-[95%] md:max-w-8xl text-center text-3xl md:text-4xl font-semibold text-gradient mt-4 mb-4 mx-auto">Software Engineer</h2>
-        <h3 class="max-w-[95%] md:max-w-8xl text-center text-2xl md:text-2xl font-semibold text-gradient mt-4 mb-16 2xl:mb-40 mx-auto">Colchester, Essex</h3>
+        <h1 class="max-w-[95%] md:max-w-8xl text-center text-4xl md:text-6xl font-semibold text-gradient mt-16 md:mt-8 mb-16 2xl:mb-24 mx-auto">Hi, I'm Michael, a Software Engineer <br />in Colchester, Essex!</h1>
 
-        <div class="max-w-[95%] md:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-5 pb-10 md:pb-16 2xl:pb-32">
-          <div class="md:col-span-4 md:pb-2">
+        <div class="max-w-[95%] md:max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 pb-10 md:pb-16 lg:pb-24 2xl:pb-32">
+          <div class="lg:col-span-4 md:pb-2">
             <p class="text-center text-xl text-pacific-blue-700 pb-2 font-semibold">Working with</p>
             <div class="bg-gray-100 rounded-md shadow-md p-2 pt-4">
               <div class="grid grid grid-cols-2 bg-gray-100 rounded-md gap-5">
@@ -100,7 +139,7 @@ export default {
             </div>
           </div>
 
-          <div class="md:col-span-4 md:pb-2">
+          <div class="lg:col-span-4 lg:col-span-4 md:pb-2">
             <p class="text-center text-xl text-pacific-blue-700 pb-2 font-semibold">Working at</p>
             <div class="text-center bg-gray-100 rounded-md shadow-md p-2 pt-4">
               <a href="https://wonde.com" target="_blank" title="Wonde">
@@ -110,14 +149,14 @@ export default {
             </div>
           </div>
 
-          <div class="md:col-span-4 md:pb-2">
+          <div class="lg:col-span-4 md:pb-2">
             <p class="text-center text-xl text-pacific-blue-700 pb-2 font-semibold">Listening to</p>
             <div class="w-full">
               <div id="currently-playing-widget" data-user="michael"></div>
             </div>
           </div>
 
-          <div class="md:col-span-6 md:pb-2">
+          <div class="lg:col-span-6 md:pb-2">
             <p class="text-center text-xl text-pacific-blue-700 pb-2 font-semibold">Playing with</p>
             <div class="bg-gray-100 rounded-md shadow-md p-2 pt-4">
               <div class="grid grid-cols-3 md:grid-cols-5 bg-gray-100 rounded-md gap-5">
@@ -153,13 +192,13 @@ export default {
                   <a href="https://developer.spotify.com/" target="_blank" title="Spotify API">
                     <FontAwesomeIcon class="text-3xl rounded-full aspect-square p-3 m-2 bg-[#1DB954] text-white" :icon="['fab', 'spotify']" />
                   </a>
-                  <p class="text-[#1DB954] text-lg pt-0 font-semibold">Spotify API</p>
+                  <p class="text-[#1DB954] text-lg pt-0 font-semibold">Spotify <span class="lg:hidden xl:inline-block">API</span></p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="md:col-span-3 md:pb-2">
+          <div class="lg:col-span-3 md:pb-2">
             <p class="text-center text-xl text-pacific-blue-700 pb-2 font-semibold">Other Links</p>
             <div class="bg-gray-100 rounded-md shadow-md p-2 pt-4">
               <div class="grid grid-cols-2 bg-gray-100 rounded-md gap-5">
@@ -179,60 +218,59 @@ export default {
             </div>
           </div>
 
-          <div class="md:col-span-3 md:pb-2">
+          <div class="lg:col-span-3 md:pb-2">
             <p class="text-center text-xl text-pacific-blue-700 pb-2 font-semibold">Exploring opportunities</p>
-            <div class="text-center bg-gray-100 rounded-md shadow-md p-2 pt-4">
-              <!-- <FontAwesomeIcon class="text-3xl rounded-full py-3 px-3 m-2 bg-gradient-to-br from-emerald-400 to-emerald-800 text-white" :icon="['fas', 'circle-check']" />
-              <p class="text-emerald-500 text-lg pt-0 font-semibold">Yes, get in touch</p> -->
+            <div v-if="openToOpportunities" class="text-center bg-gray-100 rounded-md shadow-md p-2 pt-4">
+              <FontAwesomeIcon class="text-3xl rounded-full py-3 px-3 m-2 bg-gradient-to-br from-emerald-400 to-emerald-800 text-white" :icon="['fas', 'circle-check']" />
+              <p class="text-emerald-500 text-lg pt-0 font-semibold">Yes, get in touch</p>
+            </div>
 
+            <div v-else class="text-center bg-gray-100 rounded-md shadow-md p-2 pt-4">
               <FontAwesomeIcon class="text-3xl rounded-full py-3 px-3 m-2 bg-gradient-to-br from-red-400 to-red-800 text-white" :icon="['fas', 'circle-xmark']" />
               <p class="text-red-500 text-lg pt-0 font-semibold">Not at the moment</p>
             </div>
           </div>
         </div>
+
+        <div class="hidden lg:block chevron mt-2">
+          <a href="#about">
+            <FontAwesomeIcon class="text-2xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'chevron-down']" />
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- About me -->
-    <!-- Turn these into bullet points -->
     <div class="max-w-[95%] md:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 pb-8">
-      <h2 class="text-3xl text-gradient text-center md:col-span-3 font-semibold">About Me</h2>
+      <h2 id="about" class="text-3xl text-gradient text-center md:col-span-3 font-semibold">About Me</h2>
       <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4 pb-5">
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'mortar-board']" />
           <p class="md:text-lg">4 years of Web Development specific education</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'building']" />
           <p class="md:text-lg">2 years of commercial experience</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'code']" />
           <p class="md:text-lg">Full-stack, with a back-end focus</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fab', 'php']" />
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fab', 'laravel']" />
           <p class="md:text-lg">Playing with PHP since 2013, Laravel since 2017</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'mortar-board']" />
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'comments']" />
           <p class="md:text-lg">Published research around machine learning and natural language processing</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md text-center p-3">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3">
           <FontAwesomeIcon class="aspect-square text-3xl rounded-full py-3 px-3 m-2 gradient text-white" :icon="['fas', 'book']" />
           <p class="md:text-lg">Always trying to learn something new</p>
         </div>
       </div>
-        <!-- <p class="my-2">I'm Michael, a web developer (back-end/full-stack) in Colchester with 4 years of experience (2 years commercially) specifically in web design and development.</p>
-        <p class="my-2">I've recently completed a research master's at the University of Portsmouth in which I explored automated labelling and machine learning for sentiment and emotion. Before that, I studied a master of computing degree at Edge Hill University in web design and development.</p>
-        <p class="my-2">Within the web development field, my interests are mainly in back-end development (PHP, Laravel, SQL).</p>
-        <p class="my-2">I am currently looking for a remote back-end or full-stack developer role.</p>
-        <p class="my-2">Want to know more? Get in touch.</p>
-       -->
 
-      <!-- My skills -->
       <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg p-2 text-center">
         <h3 class="text-gradient text-2xl text-center mb-2 font-semibold">Back-end Skills</h3>
         <span class="gradient text-white rounded-md p-2 mr-2 mb-2 inline-block text-sm">PHP</span>
@@ -267,8 +305,8 @@ export default {
       </div>
     </div>
 
-    <h2 class="text-3xl text-gradient text-center font-semibold">My Experience</h2>
-    <div class="max-w-[95%] md:max-w-7xl mx-auto mt-5 space-y-2 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-300">
+    <h2 id="experience" class="text-3xl text-gradient text-center font-semibold">My Experience</h2>
+    <div class="max-w-[95%] md:max-w-7xl mx-auto mt-5 space-y-2 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-300 mb-8">
       <Item
         v-for="employment in employments" :key="'emp-' + employment.id"
         :organisation="employment.company"
@@ -298,8 +336,8 @@ export default {
       :item="currentlySelectedTimelineItem"
     />
 
-    <div class="max-w-[95%] md:max-w-7xl mb-5 mx-auto grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-5" id="projects">
-      <h2 class="md:col-span-2 lg:col-span-3 text-3xl text-gradient text-center font-semibold">Projects</h2>
+    <div class="max-w-[95%] md:max-w-7xl mx-auto mb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+      <h2 id="projects" class="md:col-span-2 lg:col-span-3 text-3xl text-gradient text-center font-semibold">Projects</h2>
       <Card
         v-for="project in projects" :key="'proj' + project.id"
         :project="project"
@@ -311,7 +349,8 @@ export default {
       :project="currentlySelectedProject"
     />
 
-    <h2 class="md:col-span-2 lg:col-span-3 text-3xl text-gradient text-center font-semibold mt-8">Get in Touch</h2>
+    <h2 id="contact" class="md:col-span-2 lg:col-span-3 text-3xl text-gradient text-center font-semibold">Get in Touch</h2>
+
     <Form></Form>
   </div>
 </template>

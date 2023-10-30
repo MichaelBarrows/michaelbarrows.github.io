@@ -56,40 +56,46 @@ export default {
       </div>
       <div>
         <Input
-        name="name"
-        placeholder="Name"
-        type="text"
-        @valueChanged="(value) => name = value"
+          name="name"
+          placeholder="Name"
+          type="text"
+          styles="border-pacific-blue-600 shadow-lg"
+          @valueChanged="(value) => name = value"
         />
         <Input
-        name="email"
-        placeholder="Email"
-        type="email"
-        @valueChanged="(value) => email = value"
+          name="email"
+          placeholder="Email"
+          type="email"
+          styles="border-pacific-blue-600 shadow-lg"
+          @valueChanged="(value) => email = value"
         />
         <Input
-        name="phone"
-        placeholder="Phone Number"
-        type="text"
-        @valueChanged="(value) => phone = value"
+          name="phone"
+          placeholder="Phone Number"
+          type="text"
+          styles="border-pacific-blue-600 shadow-lg"
+          @valueChanged="(value) => phone = value"
         />
       </div>
       <div class="small-12 medium-12 large-12 xlarge-12">
         <TextArea
-        name="message"
-        placeholder="Your Message"
-        @valueChanged="(value) => message = value"
+          name="message"
+          styles="border-pacific-blue-600 shadow-lg"
+          placeholder="Your Message"
+          @valueChanged="(value) => message = value"
         />
         <div class="small-12 medium-6 large-6 xlarge-6 grid grid-cols-2 gap-2">
           <Button
-          name="reset"
-          type="reset"
-          value="Reset"
+            name="reset"
+            type="reset"
+            value="Reset"
+            styles="shadow-lg"
           />
           <Button
-          name="submit"
-          type="submit"
-          value="Send Message"
+            name="submit"
+            type="submit"
+            value="Send Message"
+            styles="shadow-lg"
           />
         </div>
       </div>
