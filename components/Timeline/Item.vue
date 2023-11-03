@@ -1,5 +1,4 @@
 <script>
-import { getProject } from '~/api/portfolio'
 
 export default {
   props: {
