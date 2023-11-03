@@ -45,6 +45,21 @@ export const getProjects = async () => {
   return { status, data }
 }
 
+export const getOpenToOpportunities = async () => {
+  let data = {}
+  let status
+  await apiGet('open-to-opportunities')
+    .then((response) => {
+      status = successful(response)
+
+      if (status) {
+        data = response.data
+      }
+    })
+
+  return { status, data }
+}
+
 export const submitForm = async (payload) => {
   let data = {}
   let status

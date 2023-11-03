@@ -2,7 +2,8 @@
 import {
   getEmployment,
   getEducation,
-  getProjects
+  getProjects,
+  getOpenToOpportunities
 } from '@/api/portfolio'
 import TimelineItemModal from '@/components/Modals/TimelineItemModal.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -40,6 +41,9 @@ export default {
     while (!this.$store) {
       // do nothing untill we can
     }
+
+    const openToOpportunities = await getOpenToOpportunities();
+    this.openToOpportunities = openToOpportunities?.data['open-to-opportunities'];
 
     const employmentRequest = await getEmployment();
 
