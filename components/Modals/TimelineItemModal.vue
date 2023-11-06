@@ -32,6 +32,27 @@ export default {
 }
 </script>
 
+<style scoped>
+  .gradient {
+    @apply bg-gradient-to-br from-pacific-blue-600 to-pacific-blue-800;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-br from-pacific-blue-500 to-pacific-blue-900 bg-clip-text text-transparent;
+  }
+  * >>> h2 {
+    @apply text-2xl text-gradient;
+  }
+  * >>> p {
+    @apply my-2;
+  }
+  * >>> ul {
+    @apply list-disc list-outside marker:text-pacific-blue-600 ml-4;
+  }
+  * >>> p > a {
+    @apply text-pacific-blue-600;
+  }
+</style>
+
 <template>
   <BaseModal :title="item.title + ' @ ' +  item.company" :show="displayModal" :close="closeModal" width="md:max-w-5xl">
     <div @submit.prevent="submit" class="p-5 text-left grid md:grid-cols-3">
