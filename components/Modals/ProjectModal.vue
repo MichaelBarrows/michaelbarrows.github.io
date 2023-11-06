@@ -16,6 +16,7 @@ export default {
     },
   },
 }
+
 </script>
 
 <template>
@@ -44,20 +45,7 @@ export default {
           </a>
         </div>
       </div>
-      <div class="md:col-span-2 md:ml-2 md:mt-2">
-        <div v-for="content in project.content" :key="content.id">
-          <p
-            v-if="content.format == 'paragraph'"
-            v-html="content.text"
-            class="mt-2 mb-4"
-          ></p>
-          <h2
-            v-else-if="content.format == 'heading'"
-            v-html="content.text"
-            class="text-gradient text-2xl"
-          ></h2>
-        </div>
-      </div>
+      <div class="md:col-span-2 md:ml-2 md:mt-2" v-html="project.description"></div>
     </div>
   </BaseModal>
 </template>

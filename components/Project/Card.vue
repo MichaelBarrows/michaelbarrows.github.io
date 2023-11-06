@@ -16,7 +16,7 @@ export default {
         icon: this.project.fa_icon_logo,
         techStack: this.project.tech_stack,
         slug: this.project.pretty_url,
-        content: this.project.content,
+        description: this.project.description,
         links: this.project.links,
       }
       this.clickAction(data)

@@ -28,7 +28,6 @@ export default {
         message: this.message,
       })
 
-      console.log(response.data)
       this.success = response.status
       this.error = ! response.status
 
