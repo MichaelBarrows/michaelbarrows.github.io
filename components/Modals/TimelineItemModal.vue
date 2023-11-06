@@ -39,7 +39,7 @@ export default {
   .text-gradient {
     @apply bg-gradient-to-br from-pacific-blue-500 to-pacific-blue-900 bg-clip-text text-transparent;
   }
-  * >>> h2 {
+  * >>> h2:not(.modal-title) {
     @apply text-2xl text-gradient;
   }
   * >>> p {
