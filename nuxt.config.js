@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Michael Barrows',
+    title: 'Michael Barrows | Software Engineer in Colchester, England',
     htmlAttrs: {
       lang: 'en'
     },
