@@ -39,7 +39,7 @@ export default {
   * >>> ul {
     @apply list-disc list-outside marker:text-pacific-blue-600 ml-4;
   }
-  * >>> p > a {
+  * >>> p > a, * >>> li > a {
     @apply text-pacific-blue-600;
   }
 </style>
