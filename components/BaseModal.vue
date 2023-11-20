@@ -33,7 +33,7 @@ export default {
   * >>> h2:not(.modal-title) {
     @apply text-2xl text-gradient;
   }
-  * >>> p {
+  * >>> p, * >>> ul {
     @apply my-2;
   }
   * >>> ul {
