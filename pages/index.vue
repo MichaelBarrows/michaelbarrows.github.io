@@ -320,6 +320,7 @@ export default {
         :endDate="employment.end_date"
         :techStack="employment.tech_stack"
         :description="employment.description"
+        :properties="employment.properties"
         :clickAction="showTimelineItemModal"
       />
 
@@ -332,6 +333,7 @@ export default {
         :endDate="education.end_date"
         :techStack="education.tech_stack"
         :description="education.description"
+        :properties="education.properties"
         :clickAction="showTimelineItemModal"
       />
     </div>
