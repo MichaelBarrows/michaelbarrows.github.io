@@ -40,7 +40,7 @@ export default {
     <div @submit.prevent="submit" class="p-3 text-left grid md:grid-cols-3">
       <div class="md:border-r md:border-b-0 border-pacific-blue-600">
         <div class="mb-2 md:mb-0 mr-2">
-          <img v-if="item.properties?.image" :src="item.properties?.image" class="max-w-[50%] mx-auto">
+          <img v-if="item.properties?.image" :src="item.properties?.image" class="max-w-[50%] mx-auto" :alt="item.company + ' logo'">
           <h1 class="text-3xl text-gradient pb-2 text-center">{{ item.title }}</h1>
           <h2 class="text-xl text-gradient pb-2 text-center">{{ item.company }}</h2>
           <p class="pb-2 text-center">{{ item.start_date }} - {{ item.end_date }}</p>

@@ -166,28 +166,28 @@ export default {
               <div class="grid grid-cols-3 md:grid-cols-5 bg-gray-100 rounded-md gap-5">
                 <div class="text-center">
                   <a href="https://nativephp.com" target="_blank" title="NativePHP">
-                    <img class="max-w-[60px] mx-auto pb-3" src="https://avatars.githubusercontent.com/u/130286900?s=100&v=4">
+                    <img class="max-w-[60px] mx-auto pb-3" src="https://avatars.githubusercontent.com/u/130286900?s=100&v=4" alt="NativePHP logo">
                   </a>
                   <p class="text-[#111827] text-lg pt-0 font-semibold">NativePHP</p>
                 </div>
 
                 <div class="text-center">
                   <a href="https://livewire.laravel.com" target="_blank" title="Livewire">
-                    <img class="w-[60px] mx-auto pb-3" src="https://avatars.githubusercontent.com/u/51960834?s=100&v=4">
+                    <img class="w-[60px] mx-auto pb-3" src="https://avatars.githubusercontent.com/u/51960834?s=100&v=4" alt="Livewire logo">
                   </a>
                   <p class="text-[#EE5D99] text-lg pt-0 font-semibold">Livewire</p>
                 </div>
 
                 <div class="text-center">
                   <a href="https://filamentphp.com/" target="_blank" title="Filament">
-                    <img class="w-[60px] mx-auto pb-3" src="https://avatars.githubusercontent.com/u/64450473?s=200&v=4">
+                    <img class="w-[60px] mx-auto pb-3" src="https://avatars.githubusercontent.com/u/64450473?s=200&v=4" alt="Filament logo">
                   </a>
                   <p class="text-[#FDAE4B] text-lg pt-0 font-semibold">Filament</p>
                 </div>
 
                 <div class="text-center">
                   <a href="https://vuejs.org/" target="_blank" title="Vue">
-                    <img class="w-[60px] mx-auto pb-3" src="https://avatars.githubusercontent.com/u/6128107?s=200&v=4">
+                    <img class="w-[60px] mx-auto pb-3" src="https://avatars.githubusercontent.com/u/6128107?s=200&v=4" alt="Vue logo">
                   </a>
                   <p class="text-[#41b883] text-lg pt-0 font-semibold">Vue</p>
                 </div>

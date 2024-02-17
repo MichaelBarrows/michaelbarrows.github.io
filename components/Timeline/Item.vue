@@ -55,7 +55,7 @@ export default {
     </div>
     <div :class="'w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white rounded border-2 shadow-xl cursor-pointer m-1 md:m-0 ' + (endDate == 'Present'  ? 'border-emerald-500' : 'border-pacific-blue-600') + (properties?.image ? ' p-4 pl-2' : ' p-4')" @click.prevent="handleClick()">
     <div class="grid grid-cols-5 items-center justify-center">
-        <img v-if="properties?.image" :src="properties?.image" class="max-w-full"/>
+        <img v-if="properties?.image" :src="properties?.image" class="max-w-full" :alt="organisation + ' logo'"/>
         <div :class="(properties?.image ? 'col-span-4 pl-3' : 'col-span-5')">
           <div class="col-span-4 flex items-center justify-between space-x-2 mb-1">
             <div class="font-bold text-slate-900">{{ position }}</div>
